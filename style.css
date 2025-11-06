@@ -1,0 +1,49 @@
+/*
+  Este archivo contiene solo los estilos personalizados
+  que Tailwind CSS no maneja por defecto.
+*/
+
+body { 
+    font-family: 'Inter', sans-serif; 
+}
+
+/* Ocultar barra de scroll */
+.scrollbar-hide::-webkit-scrollbar { 
+    display: none; 
+}
+.scrollbar-hide { 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+/* Animación de los "blobs" de fondo */
+@keyframes rotateBlob {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.color-blob {
+    position: fixed; 
+    z-index: 0; 
+    opacity: 0.6;
+    filter: blur(200px); 
+    animation: rotateBlob 40s infinite linear;
+}
+
+/* Estado activo para una canción en la lista */
+.track-item.active { 
+    background-color: rgba(255, 255, 255, 0.25); 
+}
+
+/* Estilos de los botones de filtro */
+.filter-btn.active { 
+    background-color: white; 
+    color: black; 
+}
+.filter-btn.inactive {
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
